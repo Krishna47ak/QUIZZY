@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const PrepCard = ({ title }) => {
     return (
-        <div className="border border-gray-500 bg-[#404040] w-[95%] p-5 rounded-xl hover:scale-105 duration-500 cursor-pointer" >
+        <div className="border border-[#5d5d5d] bg-[#404040] w-[95%] p-5 rounded-xl hover:scale-105 duration-500 cursor-pointer" >
             <div className="text-gray-400 text-xs" >
                 <p>Last practice linear etc etc</p>
                 <p>28/02/2023</p>

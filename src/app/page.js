@@ -56,7 +56,7 @@ export default function Home() {
 
       <div className="p-10 md:px-32 lg:px-20 min-[1155px]:px-32" >
         <p className="text-2xl md:text-3xl font-semibold" >Hey, <span className="text-[#edff85]" >Ananda!</span></p>
-        <p className="text-2xl md:text-3xl font-semibold" >How's your prep for the <span className="text-[#edff85]" >March SAT</span></p>
+        <p className="text-2xl md:text-3xl font-semibold" >How&apos;s your prep for the <span className="text-[#edff85]" >March SAT</span></p>
         <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-5 mt-10" >
           <PrepCard title="Practice" />
           <PrepCard title="Mock" />
