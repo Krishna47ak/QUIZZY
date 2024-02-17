@@ -1,113 +1,69 @@
+import CircularProgressBar from "@/components/CircularProgressBar";
+import LeaderboardCard from "@/components/LeaderboardCard";
+import PrepCard from "@/components/PrepCard";
 import Image from "next/image";
 
+const leaderboardData = ["Name", "Name", "Name", "You"]
+
 export default function Home() {
+
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="lg:flex bg-gradient-to-br from-[#354640] via-[#2a2a2a] to-[#2d332f] text-white min-h-screen" >
+      <div className="leaderBoard lg:w-[45vw] min-[1155px]:w-[30vw] lg:h-auto p-10 bg-transparent" >
+        <div className="flex items-center" >
+          <Image src="/profile-icon.svg" width={36} height={36} alt="profile" />
+          <p className="text-2xl ml-2" >Chat<span className="font-semibold" >SAT</span></p>
+        </div>
+
+        <div className="bg-[#44554f] shadow-inner shadow-[#616e5d] border border-[#616e5d] p-3 px-4 mt-7 rounded-xl" >
+          <p>New Thread</p>
+        </div>
+
+        <div className="flex justify-between bg-[#44554f] shadow-inner shadow-[#616e5d] p-5 rounded-xl my-5" >
+          <CircularProgressBar progress={4} />
+          <div>
+            <div className="flex space-x-2 items-center text-3xl" >
+              <Image src="/medal-icon.svg" width={40} height={40} alt="medal" />
+              <p className="font-medium" >0/223</p>
+              <p className="font-semibold text-[#edff85]" >XP</p>
+            </div>
+            <div className="bg-[#7a8682] text-[#edff85] shadow-inner shadow-[#839490] text-sm w-[70%] py-2 ml-auto mt-2 text-center rounded-xl active:scale-95 cursor-pointer select-none" >Take a Quiz</div>
+          </div>
+        </div>
+
+        <div className="bg-[#434e4a] shadow-inner shadow-[#616e5d] rounded-xl" >
+          <div className="bg-[#4f5a56] shadow-inner shadow-[#616e5d] border border-[#616e5d] p-4 px-5 rounded-xl" >
+            <p>Leaderboard</p>
+          </div>
+          <div className="px-5 pb-4" >
+            {leaderboardData?.map((data, index) => (
+              <LeaderboardCard key={index} index={index} name={data} />
+            ))}
+          </div>
+        </div>
+
+        <div className="flex items-center space-x-2 text-lg  mt-5 mb-3" >
+          <Image src="/profile-icon.svg" width={40} height={40} alt="profile" />
+          <p>Name</p>
+        </div>
+
+        <div className="flex items-center space-x-2 text-xs cursor-pointer select-none" >
+          <Image className="rotate-180" src="signout-icon.svg" width={15} height={15} alt="sign out" />
+          <p>Sign Out</p>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="p-10 md:px-32 lg:px-20 min-[1155px]:px-32" >
+        <p className="text-2xl md:text-3xl font-semibold" >Hey, <span className="text-[#edff85]" >Ananda!</span></p>
+        <p className="text-2xl md:text-3xl font-semibold" >How's your prep for the <span className="text-[#edff85]" >March SAT</span></p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-5 mt-10" >
+          <PrepCard title="Practice" />
+          <PrepCard title="Mock" />
+          <PrepCard title="Title Text here" />
+          <PrepCard title="Title Text here" />
+        </div>
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div >
   );
 }
