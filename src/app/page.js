@@ -28,7 +28,7 @@ export default function Home() {
               <p className="font-medium" >0/223</p>
               <p className="font-semibold text-[#edff85]" >XP</p>
             </div>
-            <div className="bg-[#7a8682] text-[#edff85] shadow-inner shadow-[#839490] text-sm w-[70%] py-2 ml-auto mt-2 text-center rounded-xl active:scale-95 cursor-pointer select-none" >Take a Quiz</div>
+            <div className="bg-[#7a8682] text-[#edff85] shadow-inner shadow-[#839490] text-sm w-[70%] py-2 ml-auto mt-2 text-center rounded-xl active:scale-95 duration-300 cursor-pointer select-none" >Take a Quiz</div>
           </div>
         </div>
 
