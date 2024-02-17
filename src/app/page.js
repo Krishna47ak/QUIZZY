@@ -36,7 +36,7 @@ export default function Home() {
           <div className="bg-[#4f5a56] shadow-inner shadow-[#616e5d] border border-[#616e5d] p-4 px-5 rounded-xl" >
             <p>Leaderboard</p>
           </div>
-          <div className="px-5 pb-4" >
+          <div className="px-5 pb-4 h-60 overflow-x-auto" >
             {leaderboardData?.map((data, index) => (
               <LeaderboardCard key={index} index={index} name={data} />
             ))}
